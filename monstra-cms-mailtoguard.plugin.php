@@ -53,8 +53,8 @@
             
             if (isset($cc)) {
                 $guardcc = $cc;
-                $keycc = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999);
-                for ($i=0;$i<strlen($guardcc);$i+=1) $cipher_text.= $keycc[strpos($character_set,$guardcc[$i])];
+                $keycc = str_shuffle($character_set); $cipher_textcc = ''; $id = 'e'.rand(1,999999999);
+                for ($i=0;$i<strlen($guardcc);$i+=1) $cipher_textcc.= $keycc[strpos($character_set,$guardcc[$i])];
             }
 
             
@@ -69,7 +69,7 @@
             } elseif ((isset($keyemail)) && (isset($keycc))) {
                 $script = 'var a="'.$keyemail.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";';
                 $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));';
-                $script.= 'var ac="'.$keyemail.'";var bc=ac.split("").sort().join("");var c="'.$cipher_text.'";var dc="";';
+                $script.= 'var ac="'.$keyemail.'";var bc=ac.split("").sort().join("");var cc="'.$cipher_textcc.'";var dc="";';
                 $script.= 'for(var ec=0;ec<cc.length;ec++)dc+=bc.charAt(ac.indexOf(cc.charAt(ec)));';
                 $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"?cc="+dc+"\\">"+d+"</a>"';
                 $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")"; 
