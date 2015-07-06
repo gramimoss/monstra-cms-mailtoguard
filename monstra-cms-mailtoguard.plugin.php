@@ -53,8 +53,8 @@
             
             if (isset($cc)) {
                 $guardcc = $cc;
-                $keycc = str_shuffle($character_setcc); $cipher_textcc = ''; $id = 'e'.rand(1,999999999);
-                for ($i=0;$i<strlen($guardcc);$i+=1) $cipher_textcc.= $keycc[strpos($character_setcc,$guardcc[$i])];
+                $keycc = str_shuffle($character_set); $cipher_textcc = ''; $id = 'e'.rand(1,999999999);
+                for ($i=0;$i<strlen($guardcc);$i+=1) $cipher_textcc.= $keycc[strpos($character_set,$guardcc[$i])];
             }
 
             
