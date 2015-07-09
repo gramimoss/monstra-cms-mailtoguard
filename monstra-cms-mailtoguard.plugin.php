@@ -23,26 +23,20 @@
     // Add shortcode
     Shortcode::add('mailtoguard', 'mailtoguard::_shortcode');
 
-
-		/**
-		 * Maps Shortcode
-		 *
-		 *  <code>
-		 *      {googlemap latlng="-28.4792625,24.6727135" markers="Point1,-28.7197555,24.7763009"}
-		 *
-		 *      {googlemap height="480" latlng="-28.4792625,24.6727135" markers="point1,-28.7197555,24.7763009|point2,-28.7228392,24.7570326"}
-		 *
-		 *      {googlemap height="480" latlng="-28.4792625,24.6727135" polylines="-29.60465,30.33349/-29.61269,30.34017|-29.61269,30.34017/-29.60604,30.36988"}
-		 *
-		 *      {googlemap height="480" latlng="-28.4792625,24.6727135" markers="Backup Site,-29.60465,30.33349|main Site,-29.61269,30.34017" polylines="-29.60465,30.33349/-29.61269,30.34017|-29.61269,30.34017/-29.60604,30.36988"}
-		 *  </code>
-		 *
-		 */
     class mailtoguard {
         
         public static function _shortcode($attributes) {
-            // Extract
-            extract($attributes);
+        
+            return mailtoguard::mailtoencode($attributes['email'],$attributes['cc']);
+	}
+        
+        public static function display($email="",$cc="") {
+        
+            echo mailtoguard::mailtoencode($email,$cc);
+	}
+        
+        public static function mailtoencode($email="",$cc=""){
+            
             $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';            
             
             if (isset($email)) {
@@ -79,8 +73,6 @@
                 $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
                 return '<span id="'.$id.'">[javascript protected email address]</span>'.$script;   
             }
-            
-            
-	}
+        }
 
     }
