@@ -16,7 +16,7 @@
 		Plugin::register( __FILE__,
 										__('Mailto Guard'),
 										__('Mailto Guard plugin for Monstra.'),
-										'1.0.0',
+										'1.0.1',
 										'Gambi',
 										'http://www.gambi.co.za');
 
