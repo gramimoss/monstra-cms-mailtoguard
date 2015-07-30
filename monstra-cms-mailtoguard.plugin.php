@@ -59,7 +59,7 @@
 						if ((isset($keyemail))	&& (empty($keycc))){
 								$script = 'var a="'.$keyemail.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";';
 								$script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));';
-								$script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">'.$Info.'</a>"';
+								$script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">'.$info.'</a>"';
 								$script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")";
 								$script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
 								return '<span id="'.$id.'">[javascript protected email address]</span>'.$script;
@@ -71,7 +71,7 @@
 
 								$script.= 'var ac="'.$keycc.'";var bc=ac.split("").sort().join("");var cc="'.$cipher_textcc.'";var dc="";';
 								$script.= 'for(var ec=0;ec<cc.length;ec++)dc+=bc.charAt(ac.indexOf(cc.charAt(ec)));';
-								$script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"?cc="+dc+"\\">'.$Info.'</a>"';
+								$script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"?cc="+dc+"\\">'.$info.'</a>"';
 								$script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")";
 								$script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
 								return '<span id="'.$id.'">[javascript protected email address]</span>'.$script;
