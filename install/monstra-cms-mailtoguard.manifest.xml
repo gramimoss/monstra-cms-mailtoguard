@@ -5,7 +5,7 @@
     <plugin_priority>10</plugin_priority>
     <plugin_name>Mailto Guard</plugin_name>
     <plugin_description>Mailto Guard plugin for Monstra.</plugin_description>
-    <plugin_version>1.0.0</plugin_version>
+    <plugin_version>1.0.1</plugin_version>
     <plugin_author>Gambi</plugin_author>
     <plugin_author_uri>http://www.gambi.co.za</plugin_author_uri>
 </root>
